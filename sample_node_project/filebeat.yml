@@ -8,8 +8,8 @@ output.elasticsearch:
   hosts: ["${domain_name}/elasticsearch"]
   index: ${index_name} # replace with your index name
 
-setup.template.name: ${project_name}
-setup.template.pattern: ${project_name}
+setup.template.name: ${index_name}
+setup.template.pattern: ${index_name}
 setup.ilm.enabled: false
 
 logging:

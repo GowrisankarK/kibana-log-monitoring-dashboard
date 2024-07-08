@@ -13,4 +13,4 @@ sudo chown -R $(whoami) /usr/local/etc/filebeat/filebeat.yml
 #push logs to elasticsearch(background task)
 nohup sudo ./filebeat-8.14.1-darwin-x86_64/filebeat -e -c /usr/local/etc/filebeat/filebeat.yml -d "*" -v
 
-curl -XGET "http://${domain_name}/${project_name}/_search?q=*"
+curl -XGET "http://${domain_name}/${index_name}/_search?q=*"
