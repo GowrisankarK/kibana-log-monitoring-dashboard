@@ -1,0 +1,22 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - ${path-to-project}/sample_node_project/app.log
+
+output.elasticsearch:
+  hosts: ["${domain_name}/elasticsearch"]
+  index: ${index_name} # replace with your index name
+
+setup.template.name: ${project_name}
+setup.template.pattern: ${project_name}
+setup.ilm.enabled: false
+
+logging:
+  level: info
+  to_files: true
+  files:
+    path: /usr/local/var/log/filebeat
+    name: filebeat
+    keepfiles: 7
+    permissions: 0644
